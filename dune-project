@@ -115,6 +115,7 @@
  (depends
   (bap (= :version))
   (bap-byteweight-frontend (= :version))
+  (bap-capstone (= :version))
   (bap-elf (= :version))
   (bap-primus-symbolic-executor (= :version))
   (bap-ghidra (= :version))
@@ -356,6 +357,17 @@
   (ppx_bap (= :version))
   (regular (= :version))
   (uuidm (>= 0.9.7))))
+
+(package
+ (name bap-capstone)
+ (synopsis "The BAP Capstone backend")
+ (tags (bap capstone disassembler))
+ (depends
+  (core_kernel (and (>= v0.14) (< v0.16)))
+  (ppx_bap (= :version))
+  (bap-common (= :version))
+  (bap-std (= :version))
+  (bap-main (= :version))))
 
 (package
  (name bap-callgraph-collator)

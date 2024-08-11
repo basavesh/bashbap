@@ -1,0 +1,15 @@
+(library
+ (name bap_capstone)
+ (public_name bap-capstone)
+ (wrapped false)
+ (preprocess (pps ppx_bap))
+ (libraries bap core_kernel mmap)
+ (foreign_stubs
+  (language cxx)
+  (names capstone_disasm)
+  (extra_deps (glob_files *.hpp))
+  (flags :standard -fPIC))
+ (foreign_stubs
+  (language c)
+  (names capstone_stubs))
+ (c_library_flags :standard -L/usr/lib64 -lcapstone))
